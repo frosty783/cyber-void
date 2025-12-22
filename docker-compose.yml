@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "${PORT:-8080}:80"
+    volumes:
+      - ./app:/var/www/html/app:ro
+      - ./classes:/var/www/html/app/classes:ro
+      - ./challenges:/var/www/html/app/challenges:ro
+      - ./data:/var/www/html/app/data  # Persistent data
+      - ./user_progress:/var/www/html/user_progress  # User progress storage
+    read_only: true
+    networks:
+      - cybervoid-net
+    environment:
+      - PROGRESS_STORAGE=/var/www/html/user_progress
+
+  php:
+    image: php:8.2-fpm
+    volumes:
+      - ./app:/var/www/html/app:ro
+      - ./classes:/var/www/html/app/classes:ro
+      - ./challenges:/var/www/html/app/challenges:ro
+      - ./data:/var/www/html/app/data
+      - ./user_progress:/var/www/html/user_progress
+    read_only: true
+    networks:
+      - cybervoid-net
+    environment:
+      - PROGRESS_STORAGE=/var/www/html/user_progress
+
+networks:
+  cybervoid-net:
+    driver: bridge

@@ -1,0 +1,13 @@
+{
+    "title": "Cybernet Shockwave Report",
+    "description": "Analyze network traffic patterns.",
+    "points": 150,
+    "category": "Network Security",
+    "flag": "BSY{network_analysis}",
+    "hints": [
+        "Look for unusual traffic patterns",
+        "Check timestamps"
+    ],
+    "files": [],
+    "content": "Analyze the network traffic and find the anomaly."
+}

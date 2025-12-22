@@ -1,0 +1,19 @@
+{
+    "title": "Hello World Intrusion",
+    "description": "A basic challenge to get started with cybersecurity. Can you find the hidden flag?",
+    "points": 100,
+    "category": "Web Security",
+    "flag": "BSY{hello_world_2024}",
+    "hints": [
+        "Check the page source",
+        "Look for comments in the HTML",
+        "Try viewing the page in different ways"
+    ],
+    "files": [
+        {
+            "name": "challenge.html",
+            "path": "challenges/easy/challenge-1.html"
+        }
+    ],
+    "content": "# Hello World Intrusion\n\nWelcome to your first cybersecurity challenge!\n\n## Scenario\nYou've been given access to a simple webpage. Your task is to find the hidden flag.\n\n## Instructions\n1. Examine the webpage carefully\n2. Look for anything unusual or hidden\n3. Submit the flag when you find it\n\nFlag format: BSY{text_here}\n\nGood luck!"
+}

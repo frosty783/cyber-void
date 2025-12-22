@@ -1,0 +1,13 @@
+{
+    "title": "Famous Quotes Decoder",
+    "description": "Decode hidden messages in famous quotes.",
+    "points": 200,
+    "category": "Cryptography",
+    "flag": "BSY{crypto_is_fun}",
+    "hints": [
+        "Try different encoding methods",
+        "Look for patterns"
+    ],
+    "files": [],
+    "content": "Decode the hidden message in the quote."
+}
