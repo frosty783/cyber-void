@@ -1,0 +1,42 @@
+echo # Docker
+echo .env
+echo .env.local
+echo .env.development.local
+echo .env.test.local
+echo .env.production.local
+echo 
+echo # Docker Compose
+echo docker-compose.override.yml
+echo 
+echo # Runtime data
+echo data/
+echo user_progress/
+echo backup_old_content/
+echo 
+echo # Logs
+echo *.log
+echo logs/
+echo 
+echo # IDE files
+echo .vscode/
+echo .idea/
+echo *.swp
+echo *.swo
+echo 
+echo # OS files
+echo .DS_Store
+echo Thumbs.db
+echo 
+echo # Temporary files
+echo tmp/
+echo temp/
+echo 
+echo # Development
+echo node_modules/
+echo npm-debug.log*
+echo yarn-debug.log*
+echo yarn-error.log*
+echo 
+echo # Testing
+echo .phpunit.result.cache
+echo > .gitignore

@@ -1,6 +1,5 @@
 {
-    "title": "Introduction to Cybersecurity",
-    "description": "Learn the basics of cybersecurity, common threats, and security principles.",
-    "estimated_time": "2 hours",
-    "prerequisites": "None"
+    "title": "0x01 - Introduction",
+    "description": "The first class focuses on Introduction to security and basic networking.",
+    "google_doc_url": "https://docs.google.com/document/d/1pqV_t1JhasMK7XmLUZ9GO6Y3FlswliyU8uh3Au9XkhU/edit?usp=sharing"
 }

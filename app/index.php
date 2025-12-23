@@ -11,11 +11,10 @@ $base_path = '/';
 // Remove query string
 $request = strtok($request, '?');
 
-// Route mapping
-
+// Route mapping - SIMPLE VERSION
 $routes = [
     '/' => 'home.php',
-    '/debug' => 'debug.php', 
+    '/debug' => 'debug.php',
     '/classes' => 'classes.php',
     '/classes/(\d+)' => 'class_detail.php',
     '/challenges' => 'challenges.php',
@@ -44,7 +43,6 @@ include 'templates/header.php';
 
 // Include the requested template
 if (file_exists("templates/$template")) {
-    // Pass fileLoader and params to template
     include "templates/$template";
 } else {
     include 'templates/404.php';

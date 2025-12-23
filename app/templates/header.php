@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cyber Void - Cybersecurity Learning Platform</title>
-    
+
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- Custom CSS -->
     <style>
         :root {
@@ -28,7 +29,7 @@
             --text-light: #f7fafc;
             --text-dark: #2d3748;
         }
-        
+
         body {
             background-color: #f8f9fa;
             color: var(--text-dark);
@@ -37,7 +38,7 @@
             margin: 0;
             padding: 0;
         }
-        
+
         /* Top Navigation - Simple with only brand and Tips & Tricks */
         .navbar-cyber {
             background-color: white;
@@ -46,7 +47,7 @@
             border-bottom: 3px solid var(--accent-blue);
             min-height: 70px;
         }
-        
+
         .navbar-container {
             display: flex;
             justify-content: space-between;
@@ -54,18 +55,19 @@
             width: 100%;
             padding: 0 1rem;
         }
-        
+
         .navbar-brand {
             font-weight: 700;
             font-size: 1.5rem;
             color: var(--primary-blue) !important;
-            margin-right: auto; /* Push to far left */
+            margin-right: auto;
+            /* Push to far left */
         }
-        
+
         .brand-cyber {
             color: var(--accent-blue);
         }
-        
+
         /* Tips & Tricks button on far right */
         .btn-tips {
             background-color: var(--accent-blue);
@@ -79,21 +81,21 @@
             text-decoration: none;
             display: inline-block;
         }
-        
+
         .btn-tips:hover {
             background-color: #2c5282;
             color: white;
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(49, 130, 206, 0.2);
         }
-        
+
         /* Main Container - Sidebar moved to left edge */
         .main-container {
             min-height: calc(100vh - 70px);
             padding: 0;
             display: flex;
         }
-        
+
         /* Sidebar - Full height on left edge */
         .sidebar {
             background-color: white;
@@ -103,11 +105,11 @@
             box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
             flex-shrink: 0;
         }
-        
+
         .sidebar-content {
             padding: 1.5rem;
         }
-        
+
         .sidebar-title {
             color: var(--primary-blue);
             font-weight: 600;
@@ -119,7 +121,7 @@
             justify-content: space-between;
             align-items: center;
         }
-        
+
         /* Collapsible sections */
         .collapse-btn {
             background: none;
@@ -135,31 +137,31 @@
             width: 100%;
             font-weight: 500;
         }
-        
+
         .collapse-btn:hover {
             color: var(--accent-blue);
         }
-        
+
         .collapse-icon {
             transition: transform 0.3s;
             font-size: 0.8rem;
         }
-        
+
         .collapse-icon.collapsed {
             transform: rotate(-90deg);
         }
-        
+
         /* Nested items in collapsible sections - Not looking like links */
         .nested-list {
             list-style: none;
             padding-left: 0.5rem;
             margin: 0.5rem 0 1.5rem 0;
         }
-        
+
         .nested-list li {
             margin-bottom: 0.4rem;
         }
-        
+
         /* Class items - Plain text look */
         .class-item {
             display: flex;
@@ -176,18 +178,18 @@
             text-align: left;
             font-size: 0.9rem;
         }
-        
+
         .class-item:hover {
             background-color: var(--light-blue);
             color: var(--accent-blue);
         }
-        
+
         .class-item.active {
             background-color: var(--light-blue);
             color: var(--accent-blue);
             border-left: 3px solid var(--accent-blue);
         }
-        
+
         /* Challenge items with badges - Plain text look */
         .challenge-item {
             display: flex;
@@ -205,18 +207,18 @@
             text-align: left;
             font-size: 0.9rem;
         }
-        
+
         .challenge-item:hover {
             background-color: var(--light-blue);
             color: var(--accent-blue);
         }
-        
+
         .challenge-item.active {
             background-color: var(--light-blue);
             color: var(--accent-blue);
             border-left: 3px solid var(--accent-blue);
         }
-        
+
         /* Challenge Difficulty Badges */
         .badge-easy {
             background-color: var(--success-green);
@@ -226,7 +228,7 @@
             border-radius: 10px;
             font-weight: 500;
         }
-        
+
         .badge-medium {
             background-color: var(--warning-orange);
             color: white;
@@ -235,7 +237,7 @@
             border-radius: 10px;
             font-weight: 500;
         }
-        
+
         .badge-hard {
             background-color: var(--danger-red);
             color: white;
@@ -244,7 +246,7 @@
             border-radius: 10px;
             font-weight: 500;
         }
-        
+
         /* Main Content Area */
         .main-content {
             flex-grow: 1;
@@ -252,7 +254,7 @@
             min-height: calc(100vh - 70px);
             overflow-y: auto;
         }
-        
+
         .content-card {
             background-color: white;
             border-radius: 8px;
@@ -260,7 +262,7 @@
             padding: 2rem;
             min-height: 500px;
         }
-        
+
         .content-title {
             color: var(--primary-blue);
             font-weight: 600;
@@ -268,7 +270,7 @@
             padding-bottom: 1rem;
             border-bottom: 2px solid var(--light-gray);
         }
-        
+
         /* Footer */
         .footer {
             background-color: var(--primary-blue);
@@ -276,17 +278,17 @@
             padding: 1.5rem 0;
             margin-top: 3rem;
         }
-        
+
         .footer a {
             color: #a0aec0;
             text-decoration: none;
             transition: color 0.2s;
         }
-        
+
         .footer a:hover {
             color: white;
         }
-        
+
         /* Dashboard Challenge List Styles */
         .dashboard-challenge-item {
             display: flex;
@@ -298,36 +300,69 @@
             text-decoration: none;
             color: var(--text-dark);
         }
-        
+
         .dashboard-challenge-item:hover {
             border-left-color: var(--accent-blue);
             background-color: var(--light-blue);
         }
-        
+
         /* Responsive adjustments */
         @media (max-width: 992px) {
             .sidebar {
                 width: 250px;
             }
         }
-        
+
         @media (max-width: 768px) {
             .main-container {
                 flex-direction: column;
             }
-            
+
             .sidebar {
                 width: 100%;
                 height: auto;
                 max-height: 300px;
             }
-            
+
             .main-content {
                 padding: 1rem;
             }
         }
+
+        /* Google Docs responsive styling */
+        @media (max-width: 768px) {
+            .card-body.p-0 {
+                height: 60vh !important;
+                min-height: 400px !important;
+            }
+
+            .card-header .btn-group {
+                flex-wrap: wrap;
+                margin-top: 0.5rem;
+            }
+
+            .card-header .btn-group .btn {
+                margin-bottom: 0.25rem;
+            }
+        }
+
+        /* Print styles for Google Docs */
+        @media print {
+
+            .card-header,
+            .card-footer,
+            .row.mt-4 {
+                display: none !important;
+            }
+
+            iframe {
+                height: 100vh !important;
+                min-height: auto !important;
+            }
+        }
     </style>
 </head>
+
 <body>
     <!-- Top Navigation - Only Brand and Tips & Tricks -->
     <nav class="navbar-cyber">
@@ -336,7 +371,7 @@
             <a class="navbar-brand" href="/">
                 <span class="brand-cyber">Cyber</span>Void
             </a>
-            
+
             <!-- Tips & Tricks button on far right -->
             <a href="/tips" class="btn-tips">
                 <i class="fas fa-lightbulb me-1"></i> Tips & Tricks
@@ -354,95 +389,96 @@
                 <div class="sidebar-title">
                     <span>Quick Navigation</span>
                 </div>
-                
+
                 <!-- Collapsible Classes Section -->
                 <div class="mb-4">
-                    <button class="collapse-btn" 
-                            data-bs-toggle="collapse" 
-                            data-bs-target="#classesCollapse"
-                            aria-expanded="true">
+                    <button class="collapse-btn" data-bs-toggle="collapse" data-bs-target="#classesCollapse"
+                        aria-expanded="true">
                         <span>Classes</span>
                         <i class="fas fa-chevron-down collapse-icon"></i>
                     </button>
-                    
+
                     <div class="collapse show" id="classesCollapse">
                         <ul class="nested-list">
                             <?php
                             // Load classes directly from PHP
                             $fileLoader = new FileLoader();
                             $classes = $fileLoader->getClasses();
-                            
+
                             if (!empty($classes)):
                                 foreach ($classes as $class):
-                            ?>
-                            <li>
-                                <button class="class-item" onclick="window.location.href='/classes/<?php echo $class['id']; ?>'">
-                                    <?php echo htmlspecialchars($class['title']); ?>
-                                </button>
-                            </li>
-                            <?php
+                                    ?>
+                                    <li>
+                                        <button class="class-item"
+                                            onclick="window.location.href='/classes/<?php echo $class['id']; ?>'">
+                                            <?php echo htmlspecialchars($class['title']); ?>
+                                        </button>
+                                    </li>
+                                    <?php
                                 endforeach;
                             else:
-                            ?>
-                            <li>
-                                <div class="text-muted small p-2">
-                                    No classes available yet.
-                                </div>
-                            </li>
+                                ?>
+                                <li>
+                                    <div class="text-muted small p-2">
+                                        No classes available yet.
+                                    </div>
+                                </li>
                             <?php endif; ?>
                         </ul>
                     </div>
                 </div>
-                
+
                 <!-- Collapsible Challenges Section -->
                 <div class="mb-4">
-                    <button class="collapse-btn" 
-                            data-bs-toggle="collapse" 
-                            data-bs-target="#challengesCollapse"
-                            aria-expanded="true">
+                    <button class="collapse-btn" data-bs-toggle="collapse" data-bs-target="#challengesCollapse"
+                        aria-expanded="true">
                         <span>Challenges</span>
                         <i class="fas fa-chevron-down collapse-icon"></i>
                     </button>
-                    
+
                     <div class="collapse show" id="challengesCollapse">
                         <ul class="nested-list">
                             <?php
                             // Load challenges directly from PHP
                             $challenges = $fileLoader->getChallenges();
-                            
+
                             if (!empty($challenges)):
                                 // Sort by difficulty
-                                usort($challenges, function($a, $b) {
+                                usort($challenges, function ($a, $b) {
                                     $difficultyOrder = ['easy' => 1, 'medium' => 2, 'hard' => 3];
                                     return $difficultyOrder[$a['difficulty']] - $difficultyOrder[$b['difficulty']];
                                 });
-                                
+
                                 foreach ($challenges as $challenge):
                                     // Determine badge class
                                     $badgeClass = 'badge-easy';
-                                    if ($challenge['difficulty'] === 'medium') $badgeClass = 'badge-medium';
-                                    if ($challenge['difficulty'] === 'hard') $badgeClass = 'badge-hard';
-                            ?>
-                            <li>
-                                <button class="challenge-item" onclick="window.location.href='/challenges/<?php echo $challenge['id']; ?>'">
-                                    <span><?php echo htmlspecialchars($challenge['title']); ?></span>
-                                    <span class="badge <?php echo $badgeClass; ?>"><?php echo $challenge['difficulty']; ?></span>
-                                </button>
-                            </li>
-                            <?php
+                                    if ($challenge['difficulty'] === 'medium')
+                                        $badgeClass = 'badge-medium';
+                                    if ($challenge['difficulty'] === 'hard')
+                                        $badgeClass = 'badge-hard';
+                                    ?>
+                                    <li>
+                                        <button class="challenge-item"
+                                            onclick="window.location.href='/challenges/<?php echo $challenge['id']; ?>'">
+                                            <span><?php echo htmlspecialchars($challenge['title']); ?></span>
+                                            <span
+                                                class="badge <?php echo $badgeClass; ?>"><?php echo $challenge['difficulty']; ?></span>
+                                        </button>
+                                    </li>
+                                    <?php
                                 endforeach;
                             else:
-                            ?>
-                            <li>
-                                <div class="text-muted small p-2">
-                                    No challenges available yet.
-                                </div>
-                            </li>
+                                ?>
+                                <li>
+                                    <div class="text-muted small p-2">
+                                        No challenges available yet.
+                                    </div>
+                                </li>
                             <?php endif; ?>
                         </ul>
                     </div>
                 </div>
-                
+
                 <!-- Discord Section -->
                 <div class="mt-4 pt-3 border-top">
                     <div class="d-flex align-items-center mb-2">
@@ -450,14 +486,12 @@
                         <span class="fw-medium">Live on Discord</span>
                     </div>
                     <p class="small text-muted mb-2">Join our Discord server for live classes and community support.</p>
-                    <a href="https://discord.gg/cybervoid" 
-                       target="_blank" 
-                       class="btn btn-sm w-100" 
-                       style="background-color: #5865f2; color: white; text-decoration: none;">
+                    <a href="https://discord.gg/cybervoid" target="_blank" class="btn btn-sm w-100"
+                        style="background-color: #5865f2; color: white; text-decoration: none;">
                         Join Discord
                     </a>
                 </div>
-                
+
                 <!-- Debug link for students (hidden in production) -->
                 <div class="mt-3 pt-3 border-top">
                     <a href="/debug" class="small text-muted" style="text-decoration: none;">
@@ -466,7 +500,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Main Content Area -->
         <div class="main-content">
             <div class="content-card" id="mainContent">

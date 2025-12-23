@@ -30,37 +30,77 @@
         <div class="card border-0 shadow-sm">
             <div class="card-body">
                 <h5 class="card-title">Recent Challenges</h5>
-                <div id="recentChallenges">
-                    <!-- Will be populated by JavaScript -->
-                    <div class="text-center py-4">
-                        <div class="spinner-border text-primary" role="status">
-                            <span class="visually-hidden">Loading...</span>
+                <div class="list-group list-group-flush">
+                    <!-- Challenge items with difficulty badges -->
+                    <button class="list-group-item list-group-item-action dashboard-challenge-item" onclick="window.location.href='/challenges/hello-world'">
+                        <div>
+                            <span class="fw-medium">Hello World Intrusion</span>
+                            <small class="text-muted ms-2 d-block d-md-inline">A basic challenge to get started</small>
                         </div>
-                    </div>
+                        <span class="badge badge-easy">Easy</span>
+                    </button>
+                    
+                    <button class="list-group-item list-group-item-action dashboard-challenge-item" onclick="window.location.href='/challenges/cybernet'">
+                        <div>
+                            <span class="fw-medium">Cybernet Shockwave Report</span>
+                            <small class="text-muted ms-2 d-block d-md-inline">Analyze network traffic</small>
+                        </div>
+                        <span class="badge badge-easy">Easy</span>
+                    </button>
+                    
+                    <button class="list-group-item list-group-item-action dashboard-challenge-item" onclick="window.location.href='/challenges/famous-quotes'">
+                        <div>
+                            <span class="fw-medium">Famous Quotes Decoder</span>
+                            <small class="text-muted ms-2 d-block d-md-inline">Cryptography challenge</small>
+                        </div>
+                        <span class="badge badge-medium">Medium</span>
+                    </button>
+                    
+                    <button class="list-group-item list-group-item-action dashboard-challenge-item" onclick="window.location.href='/challenges/whats-noise'">
+                        <div>
+                            <span class="fw-medium">What is that noise?</span>
+                            <small class="text-muted ms-2 d-block d-md-inline">Audio steganography</small>
+                        </div>
+                        <span class="badge badge-medium">Medium</span>
+                    </button>
+                    
+                    <button class="list-group-item list-group-item-action dashboard-challenge-item" onclick="window.location.href='/challenges/lect-messenger'">
+                        <div>
+                            <span class="fw-medium">Lect Messenger Analysis</span>
+                            <small class="text-muted ms-2 d-block d-md-inline">Reverse engineering</small>
+                        </div>
+                        <span class="badge badge-hard">Hard</span>
+                    </button>
                 </div>
             </div>
         </div>
     </div>
     
     <div class="col-md-4">
+        <!-- Removed progress card -->
+        
         <div class="card border-0 shadow-sm mb-4">
             <div class="card-body">
-                <h5 class="card-title">Your Progress</h5>
+                <h5 class="card-title">Quick Stats</h5>
                 <div class="text-center my-4">
-                    <div class="position-relative d-inline-block">
-                        <svg width="120" height="120" viewBox="0 0 120 120" id="progressCircle">
-                            <circle cx="60" cy="60" r="54" fill="none" stroke="#e2e8f0" stroke-width="12"/>
-                            <circle cx="60" cy="60" r="54" fill="none" stroke="#3182ce" stroke-width="12" 
-                                    stroke-linecap="round" stroke-dasharray="339.292" stroke-dashoffset="339.292"
-                                    transform="rotate(-90 60 60)" id="progressCircleFill"/>
-                        </svg>
-                        <div class="position-absolute top-50 start-50 translate-middle">
-                            <span class="h3 fw-bold" id="progressPercent">0%</span>
+                    <div class="row">
+                        <div class="col-6 mb-3">
+                            <div class="display-6 text-primary">12</div>
+                            <div class="text-muted small">Classes</div>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <div class="display-6 text-success">24</div>
+                            <div class="text-muted small">Challenges</div>
+                        </div>
+                        <div class="col-6">
+                            <div class="display-6 text-warning">3</div>
+                            <div class="text-muted small">Difficulty Levels</div>
+                        </div>
+                        <div class="col-6">
+                            <div class="display-6 text-info">7</div>
+                            <div class="text-muted small">Categories</div>
                         </div>
                     </div>
-                </div>
-                <div class="text-center">
-                    <p class="text-muted" id="progressText">Loading progress...</p>
                 </div>
             </div>
         </div>
@@ -68,11 +108,52 @@
         <div class="card border-0 shadow-sm">
             <div class="card-body">
                 <h5 class="card-title">Upcoming Sessions</h5>
-                <div class="mt-3" id="upcomingSessions">
-                    <!-- Will be populated by JavaScript -->
-                    <div class="text-center py-3">
-                        <div class="spinner-border spinner-border-sm text-primary" role="status">
-                            <span class="visually-hidden">Loading...</span>
+                <div class="mt-3">
+                    <div class="d-flex mb-3">
+                        <div class="flex-shrink-0">
+                            <div class="bg-info text-white rounded p-2 text-center" style="width: 50px;">
+                                <div class="fw-bold">15</div>
+                                <div class="small">MAR</div>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h6 class="mb-0">Class 3: Cryptography</h6>
+                            <small class="text-muted">2:00 PM - 3:30 PM</small>
+                            <div class="mt-1">
+                                <span class="badge bg-light text-dark">Discord Live</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex mb-3">
+                        <div class="flex-shrink-0">
+                            <div class="bg-primary text-white rounded p-2 text-center" style="width: 50px;">
+                                <div class="fw-bold">18</div>
+                                <div class="small">MAR</div>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h6 class="mb-0">Challenge Walkthrough</h6>
+                            <small class="text-muted">6:00 PM - 7:00 PM</small>
+                            <div class="mt-1">
+                                <span class="badge bg-light text-dark">Q&A Session</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex">
+                        <div class="flex-shrink-0">
+                            <div class="bg-warning text-dark rounded p-2 text-center" style="width: 50px;">
+                                <div class="fw-bold">22</div>
+                                <div class="small">MAR</div>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h6 class="mb-0">Class 4: Web Security</h6>
+                            <small class="text-muted">4:00 PM - 5:30 PM</small>
+                            <div class="mt-1">
+                                <span class="badge bg-light text-dark">Hands-on Lab</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -81,137 +162,4 @@
     </div>
 </div>
 
-<script>
-// Load and display user progress
-function loadUserProgress() {
-    const progress = JSON.parse(localStorage.getItem('cybervoid_progress') || '{}');
-    const challenges = progress.challenges || {};
-    const classes = progress.classes || {};
-    
-    // Calculate progress percentage
-    const totalChallenges = <?php echo count($fileLoader->getChallenges()); ?>;
-    const totalClasses = <?php echo count($fileLoader->getClasses()); ?>;
-    const completedChallenges = Object.keys(challenges).length;
-    const completedClasses = Object.keys(classes).length;
-    
-    const totalItems = totalChallenges + totalClasses;
-    const completedItems = completedChallenges + completedClasses;
-    const percentage = totalItems > 0 ? Math.round((completedItems / totalItems) * 100) : 0;
-    
-    // Update progress circle
-    const circle = document.getElementById('progressCircleFill');
-    const circumference = 339.292;
-    const offset = circumference - (percentage / 100) * circumference;
-    circle.style.strokeDashoffset = offset;
-    
-    // Update text
-    document.getElementById('progressPercent').textContent = percentage + '%';
-    document.getElementById('progressText').innerHTML = `
-        Completed <strong>${completedChallenges}</strong> of <strong>${totalChallenges}</strong> challenges<br>
-        Finished <strong>${completedClasses}</strong> of <strong>${totalClasses}</strong> classes
-    `;
-    
-    // Load recent challenges
-    loadRecentChallenges(challenges);
-    
-    // Load upcoming sessions
-    loadUpcomingSessions();
-}
-
-// Load recent challenges
-function loadRecentChallenges(userChallenges) {
-    const container = document.getElementById('recentChallenges');
-    
-    <?php
-    $challenges = $fileLoader->getChallenges();
-    $recentChallenges = array_slice($challenges, 0, 5); // Get first 5
-    ?>
-    
-    const challenges = <?php echo json_encode($recentChallenges); ?>;
-    
-    let html = '<div class="list-group list-group-flush">';
-    
-    challenges.forEach(challenge => {
-        const isCompleted = userChallenges[challenge.id];
-        let badgeClass = 'badge-easy';
-        if (challenge.difficulty === 'medium') badgeClass = 'badge-medium';
-        if (challenge.difficulty === 'hard') badgeClass = 'badge-hard';
-        
-        html += `
-            <button class="list-group-item list-group-item-action dashboard-challenge-item" 
-                    onclick="window.location.href='/challenges/${challenge.id}'">
-                <div class="d-flex justify-content-between align-items-center">
-                    <div>
-                        <span class="fw-medium">${challenge.title}</span>
-                        ${isCompleted ? '<i class="fas fa-check text-success ms-2"></i>' : ''}
-                        <small class="text-muted ms-2 d-block d-md-inline">${challenge.description}</small>
-                    </div>
-                    <div>
-                        <span class="badge ${badgeClass}">${challenge.difficulty}</span>
-                        <span class="badge bg-primary ms-1">${challenge.points} pts</span>
-                    </div>
-                </div>
-            </button>
-        `;
-    });
-    
-    html += '</div>';
-    container.innerHTML = html;
-}
-
-// Load upcoming sessions
-function loadUpcomingSessions() {
-    const container = document.getElementById('upcomingSessions');
-    
-    // Sample session data - in real app, this would come from an API
-    const sessions = [
-        {
-            date: '15 MAR',
-            title: 'Class 3: Cryptography',
-            time: '2:00 PM - 3:30 PM',
-            type: 'Discord Live'
-        },
-        {
-            date: '18 MAR',
-            title: 'Challenge Walkthrough',
-            time: '6:00 PM - 7:00 PM',
-            type: 'Q&A Session'
-        },
-        {
-            date: '22 MAR',
-            title: 'Class 4: Web Security',
-            time: '4:00 PM - 5:30 PM',
-            type: 'Hands-on Lab'
-        }
-    ];
-    
-    let html = '';
-    
-    sessions.forEach(session => {
-        html += `
-            <div class="d-flex mb-3">
-                <div class="flex-shrink-0">
-                    <div class="bg-info text-white rounded p-2 text-center" style="width: 50px;">
-                        <div class="fw-bold">${session.date.split(' ')[0]}</div>
-                        <div class="small">${session.date.split(' ')[1]}</div>
-                    </div>
-                </div>
-                <div class="flex-grow-1 ms-3">
-                    <h6 class="mb-0">${session.title}</h6>
-                    <small class="text-muted">${session.time}</small>
-                    <div class="mt-1">
-                        <span class="badge bg-light text-dark">${session.type}</span>
-                    </div>
-                </div>
-            </div>
-        `;
-    });
-    
-    container.innerHTML = html;
-}
-
-// Initialize on page load
-document.addEventListener('DOMContentLoaded', function() {
-    loadUserProgress();
-});
-</script>
+<!-- Tips & Tricks Alert -->
