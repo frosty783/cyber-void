@@ -37,6 +37,7 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
         }
 
         /* Top Navigation - Simple with only brand and Tips & Tricks */
@@ -46,6 +47,10 @@
             padding: 0.8rem 0;
             border-bottom: 3px solid var(--accent-blue);
             min-height: 70px;
+            position: sticky;
+            top: 0;
+            z-index: 1030;
+            /* High z-index to stay above other content */
         }
 
         .navbar-container {
@@ -91,9 +96,14 @@
 
         /* Main Container - Sidebar moved to left edge */
         .main-container {
-            min-height: calc(100vh - 70px);
+            min-height: calc(100vh-70vh);
             padding: 0;
             display: flex;
+            position: relative;
+            margin: 0;
+            /* Remove any margin */
+            width: 100%;
+            /* Full width */
         }
 
         /* Sidebar - Full height on left edge */
@@ -104,6 +114,18 @@
             overflow-y: auto;
             box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
             flex-shrink: 0;
+            position: sticky;
+            top: 70px;
+            align-self: flex-start;
+            z-index: 1020;
+            border-top: none;
+            margin-top: 0;
+            padding-left: 0;
+            /* Remove left padding */
+            margin-left: 0;
+            /* Remove left margin */
+            left: 0;
+            /* Force to left edge */
         }
 
         .sidebar-content {
@@ -253,6 +275,8 @@
             padding: 2rem;
             min-height: calc(100vh - 70px);
             overflow-y: auto;
+            position: relative;
+            background-color: #f8f9fa;
         }
 
         .content-card {
@@ -276,7 +300,8 @@
             background-color: var(--primary-blue);
             color: white;
             padding: 1.5rem 0;
-            margin-top: 3rem;
+            margin-top: 0;
+            width: 100%;
         }
 
         .footer a {
@@ -360,6 +385,164 @@
                 min-height: auto !important;
             }
         }
+
+        /* Dashboard specific styles */
+        .dashboard-challenge-item {
+            border-left: 4px solid #e2e8f0;
+            transition: all 0.3s;
+            padding: 0.75rem 1rem;
+        }
+
+        .dashboard-challenge-item:hover {
+            border-left-color: #3182ce;
+            background-color: #ebf8ff;
+            transform: translateX(3px);
+        }
+
+        /* Progress bar animation */
+        .progress-bar {
+            transition: width 0.6s ease;
+        }
+
+        /* Session cards */
+        .upcoming-sessions .d-flex {
+            padding: 0.75rem;
+            border-radius: 6px;
+            transition: background-color 0.2s;
+        }
+
+        .upcoming-sessions .d-flex:hover {
+            background-color: #f8f9fa;
+        }
+
+        /* Stats numbers animation */
+        .display-6 {
+            font-weight: 700;
+            transition: transform 0.3s;
+        }
+
+        .display-6:hover {
+            transform: scale(1.1);
+        }
+
+        /* Quick links */
+        .btn-outline-primary.text-start,
+        .btn-outline-success.text-start,
+        .btn-outline-info.text-start,
+        .btn-outline-dark.text-start {
+            text-align: left;
+            padding: 0.5rem 0.75rem;
+            border-left-width: 3px;
+        }
+
+        .btn-outline-primary.text-start {
+            border-left-color: #0d6efd;
+        }
+
+        .btn-outline-success.text-start {
+            border-left-color: #198754;
+        }
+
+        .btn-outline-info.text-start {
+            border-left-color: #0dcaf0;
+        }
+
+        .btn-outline-dark.text-start {
+            border-left-color: #212529;
+        }
+
+        /* Daily tip alert */
+        .alert-warning {
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Button states for dashboard */
+        .btn-primary,
+        .btn-outline-primary,
+        .btn-outline-success,
+        .btn-outline-info {
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(13, 110, 253, 0.25);
+        }
+
+        .btn-outline-primary:hover,
+        .btn-outline-success:hover,
+        .btn-outline-info:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Fix for disabled button look if using button elements */
+        button[disabled] {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        /* Better link styling in cards */
+        .card .btn-sm {
+            font-weight: 500;
+        }
+
+        /* Quick links hover effect */
+        .btn-outline-primary.text-start:hover,
+        .btn-outline-success.text-start:hover,
+        .btn-outline-info.text-start:hover,
+        .btn-outline-dark.text-start:hover {
+            padding-left: 1rem;
+            background-color: rgba(13, 110, 253, 0.05);
+        }
+
+        #open-terminal {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  background: #111;
+  color: #0f0;
+  padding: 10px 16px;
+  border: none;
+  cursor: pointer;
+}
+
+#terminal-drawer {
+  position: fixed;
+  bottom: -400px;
+  left: 0;
+  width: 100%;
+  height: 400px;
+  background: #000;
+  transition: bottom 0.3s ease;
+  z-index: 9998;
+  border-top: 2px solid #0f0;
+}
+
+#terminal-drawer.open {
+  bottom: 0;
+}
+
+#terminal-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+
     </style>
 </head>
 
@@ -372,16 +555,23 @@
                 <span class="brand-cyber">Cyber</span>Void
             </a>
 
+
             <!-- Tips & Tricks button on far right -->
             <a href="/tips" class="btn-tips">
                 <i class="fas fa-lightbulb me-1"></i> Tips & Tricks
             </a>
         </div>
+
+
+
     </nav>
 
+
     <!-- Main Content -->
+
+
     <div class="main-container">
-        <!-- Sidebar - Fixed on left edge -->
+
         <!-- Sidebar - Fixed on left edge -->
         <div class="sidebar">
             <div class="sidebar-content">
@@ -485,7 +675,8 @@
                         <i class="fab fa-discord me-2" style="color: #5865f2;"></i>
                         <span class="fw-medium">Live on Discord</span>
                     </div>
-                    <p class="small text-muted mb-2">Join our Discord server for live classes and community support.</p>
+                    <p class="small text-muted mb-2">Join our Discord server for live classes and community support.
+                    </p>
                     <a href="https://discord.gg/cybervoid" target="_blank" class="btn btn-sm w-100"
                         style="background-color: #5865f2; color: white; text-decoration: none;">
                         Join Discord

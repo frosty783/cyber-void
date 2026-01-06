@@ -4,15 +4,33 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - ./app:/var/www/html           # Mount ONLY the app folder
+      - ./app:/var/www/html
     depends_on:
       - php
+      - terminal
+    networks:
+      - cybervoid-net
 
   php:
     image: php:8.2-fpm
     volumes:
       - ./app:/var/www/html
+    networks:
+      - cybervoid-net
+
+  terminal:
+    build: ./terminal
+    expose:
+      - "80"
+      - "3001"
+    volumes:
+      - terminal-home:/root
+    networks:
+      - cybervoid-net
 
 networks:
-  default:
-    name: cybervoid-net
+  cybervoid-net:
+    driver: bridge
+
+volumes:
+  terminal-home:

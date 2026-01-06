@@ -1,0 +1,23 @@
+<!-- terminal-test.html in your app folder -->
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>WebSocket Test</h1>
+    <div id="status">Testing...</div>
+    <script>
+        const ws = new WebSocket('ws://localhost:3001');
+        
+        ws.onopen = () => {
+            document.getElementById('status').innerHTML = '✅ WebSocket server is running on port 3001!';
+        };
+        
+        ws.onerror = () => {
+            document.getElementById('status').innerHTML = '❌ WebSocket server NOT FOUND on port 3001';
+        };
+        
+        ws.onclose = () => {
+            document.getElementById('status').innerHTML += '<br>Connection closed';
+        };
+    </script>
+</body>
+</html>
