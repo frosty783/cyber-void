@@ -210,6 +210,7 @@ class FileLoader
 
         return [
             'id' => (int) $id,
+            'slug' => 'challenge-' . $id,
             'title' => $data['title'] ?? 'Challenge ' . $id,
             'description' => $data['description'] ?? '',
             'difficulty' => $difficulty,

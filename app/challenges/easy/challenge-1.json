@@ -8,6 +8,6 @@
         "Check the page source",
         "Look for comments in the HTML"
     ],
-    "files": [],
+    "files": ["index.html", "comment.txt"],
     "content": "# Hello World Intrusion\n\nWelcome to your first cybersecurity challenge!\n\nFind the hidden flag.\n\nFlag format: BSY{text_here}"
 }
